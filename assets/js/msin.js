@@ -151,3 +151,32 @@ themeButton.addEventListener('click', () => {
     localStorage.setItem('selected-theme', getCurrentTheme())
     localStorage.setItem('selected-icon', getCurrentIcon())
 })
+
+/*==================== SUBMIT CONTACT FORM ====================*/ 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbynNpkLc1z5nuVkCP2OZfcRuuFOfL8kNvTxrWn-AmO5tHsTKHvWk4o1vAI4mpkAFwzz-g/exec'
+  const form = document.forms['contact-form']
+  const submitBtn = document.querySelector('.submit__button')
+  const loading = document.querySelector('.loading')
+  const myAlert = document.querySelector('.my__alert')
+  const closeAlert = document.querySelector('.close-alert')
+
+  closeAlert.addEventListener('click', function() {
+    myAlert.classList.toggle('d-none')
+  })
+
+  form.addEventListener('submit', e => {
+    e.preventDefault()
+    // ketika tombol submit di klik
+    //tampilkan loading
+    loading.classList.toggle('d-none')
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+        //hilangkan loading dan tampilkan alert
+        loading.classList.toggle('d-none')
+        myAlert.classList.toggle('d-none')
+        //reset contact form
+        form.reset();
+        console.log('Success!', response)
+      })
+      .catch(error => console.error('Error!', error.message))
+  })

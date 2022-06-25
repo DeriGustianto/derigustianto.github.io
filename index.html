@@ -516,28 +516,40 @@
           </div>
         </div>
 
-        <form action="" class="contact__form grid">
+        <form name="contact-form" action="" class="contact__form grid">
           <div class="contact__inputs grid">
             <div class="contact__content">
               <label for="" class="contact__label">Name</label>
-              <input type="text" class="contact__input">
+              <input type="text" class="contact__input" name="name">
             </div>
             <div class="contact__content">
               <label for="" class="contact__label">Email</label>
-              <input type="email" class="contact__input">
+              <input type="email" class="contact__input" name="email">
             </div>
           </div>
 
           <div class="contact__content">
             <label for="" class="contact__label">Message</label>
-            <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
+            <textarea id="" cols="0" rows="7" class="contact__input" name="message"></textarea>
           </div>
 
-          <div>
-            <a href="#" class="button button--flex">
-              Send Message
-              <i class="uil uil-message button__icon"></i>
-            </a>
+          <div class="submit__container">
+            <button class="submit__button">
+              <span class="send">Send Message
+                <i class="uil uil-message button__icon"></i>
+              </span>
+            </button>
+            <div class="lds-ellipsis loading d-none">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+          </div>
+
+          <div class="my__alert d-none">
+            <span class="alert__title"><strong>Thankyou! </strong>Your message has been send. <span class="close-alert"
+              ><i class="uil uil-times"></i></span></span>
           </div>
         </form>
       </div>
