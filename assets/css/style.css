@@ -401,8 +401,12 @@ img {
   background-color: #fff;
 }
 
+.submit__container {
+  display: flex;
+  align-items: center;
+}
+
 .submit__button {
-  position: relative;
   background-color: var(--first-color);
   outline: none;
   border: none;
@@ -456,7 +460,7 @@ img {
 }
 .lds-ellipsis div {
   position: absolute;
-  top: 65px;
+  top: 33px;
   width: 13px;
   height: 13px;
   border-radius: 50%;
