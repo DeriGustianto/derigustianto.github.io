@@ -544,7 +544,9 @@ img {
 }
 
 .about__buttons {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 1rem;
   justify-content: center;
 }
 
